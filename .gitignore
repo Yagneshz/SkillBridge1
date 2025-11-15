@@ -1,0 +1,27 @@
+# SkillBridge .gitignore
+
+# Uploads
+uploads/*
+!uploads/.gitkeep
+
+# Configuration
+config/local.php
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+tmp/
+temp/
+

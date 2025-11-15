@@ -1,0 +1,33 @@
+# SkillBridge .htaccess Configuration
+
+# Enable Rewrite Engine
+RewriteEngine On
+
+# Set Base Directory
+RewriteBase /skillbridge/
+
+# Prevent directory listing
+Options -Indexes
+
+# Protect sensitive files
+<FilesMatch "\.(sql|md|git|env)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# PHP Settings
+php_value upload_max_filesize 10M
+php_value post_max_size 10M
+php_value max_execution_time 300
+php_value max_input_time 300
+
+# Error Pages
+ErrorDocument 404 /skillbridge/index.php
+
+# Security Headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
